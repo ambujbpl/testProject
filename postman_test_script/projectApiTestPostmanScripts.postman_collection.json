@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "7cd3b62b-8a37-4c6e-b429-321c1b2c2058",
+		"name": "projectApiTestPostmanScripts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get UserList ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:2000/getUsersList",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"getUsersList"
+					]
+				},
+				"description": "http://localhost:3000/route/getUser"
+			},
+			"response": []
+		},
+		{
+			"name": "createUser Post Api",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a32b055e-acfb-4b9f-a2b2-94b682fac081",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b009ed8b-c67b-4c4b-82ee-336c6912b3f9",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_name\": \"ambuj_dubey1\",\n    \"email\": \"ambuj.ideata@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:2000/createUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"createUser"
+					]
+				},
+				"description": "http://localhost:2000/createUser"
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Details By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:2000/getUserDetailsById/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"getUserDetailsById",
+						"1"
+					]
+				},
+				"description": "http://localhost:2000/getUserDetailsById/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Details By Id",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"user_name\": \"ambuj_dubey\",\n    \"first_name\": \"AMBUJ\",\n    \"last_name\": \"DUBEY\",\n    \"email\": \"ambujdubey89@gmail.com\",\n    \"mobile_number\": \"9753750955\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:2000/updateUserDetailsById",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"updateUserDetailsById"
+					]
+				},
+				"description": "http://localhost:2000/updateUserDetailsById"
+			},
+			"response": []
+		}
+	]
+}
