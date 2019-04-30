@@ -28,6 +28,33 @@ CREATE TABLE `users` (
 
 API 
 1 create user
-url :- localhost:3000/route/createUser
+url :- http://localhost:2000/getUsersList
+method :- get
+data obj :- NA
+
+2 
+url :- http://localhost:2000/createUser
 method :- post
-data obj :- {"user_name":"ambuj_dubey","email":"ambujdubey89@gmail.com"}
+data obj :- {
+    "user_name": "ambuj_dubey1",
+    "email": "ambuj.ideata@gmail.com"
+}
+
+
+3 
+url :- http://localhost:2000/getUserDetailsById/1
+method :- get
+data obj :- NA
+
+
+4 
+url :- http://localhost:2000/updateUserDetailsById
+method :- post
+data obj :- {
+    "id": 1,
+    "user_name": "ambuj_dubey",
+    "first_name": "AMBUJ",
+    "last_name": "DUBEY",
+    "email": "ambujdubey89@gmail.com",
+    "mobile_number": "9753750955"
+}

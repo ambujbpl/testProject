@@ -1,0 +1,31 @@
+ <div class='container main-page'>
+        <form role = "form" class="well" ng-hide="ifSearchUser">
+             <div class = "form-group">
+             <label for = "name"> User Name:  </label>
+             <input type = "text" id = "name" class = "form-control" placeholder = "Enter Your UserName " ng-model = "newcontact.name">
+             </div>
+             <div class = "form-group">
+             <label for = "fname"> First Name:  </label>
+             <input type = "text" id = "fname" class = "form-control" placeholder = "Enter Your Name " ng-model = "newcontact.fname">
+             </div>
+             <div class = "form-group">
+             <label for = "lname"> Last Name:  </label>
+             <input type = "text" id = "lname" class = "form-control" placeholder = "Enter Your Last Name " ng-model = "newcontact.lname">
+             </div>
+             <div class = "form-group">
+             <label for = "email"> Email:  </label>
+             <input type = "email" id = "email" class = "form-control" placeholder = "Enter Email " ng-model = "newcontact.email">
+             </div>
+             <div class = "form-group">
+             <label for = "password"> Mobile Number:  </label>
+             <input type = "text" id = "mnumber" class = "form-control" placeholder = "Enter Your Number " ng-model = "newcontact.mnumber">
+             </div>
+             <div class = "form-group">
+             <label for = "phone"> Phone:  </label>
+             <input type = "text" id = "phone" class = "form-control" placeholder = "Enter Phone " ng-model = "newcontact.phone">
+             </div>
+             <br>
+             <input type="hidden" ng-model="newcontact.id">
+             <input type="button" class="btn btn-primary" ng-click="saveContact()" class="btn btn-primary" value = "Submit">
+        </form>
+    </div>

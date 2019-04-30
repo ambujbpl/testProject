@@ -12,17 +12,12 @@ var loopback = require("loopback");
 app.use(loopback.static(path.resolve(__dirname, '../dist')));
 
 var transporter = nodemailer.createTransport({
-    service: config.service,
-    auth: {
-        type: config.authentication.type,
-        user: config.authentication.user,
-        pass: config.authentication.pass,
-        clientId: config.authentication.clientId,
-        clientSecret: config.authentication.clientSecret,
-        refreshToken: config.authentication.refreshToken,
-        accessToken: config.authentication.accessToken,
-    },
-})
+ service: 'gmail',
+ auth: {
+        user: 'ambuj.ideata@gmail.com',
+        pass: 'Qwerty@123#'
+    }
+});
 // configure the app to use bodyParser()
 app.use(bodyParser.urlencoded({
     extended: true
@@ -40,7 +35,6 @@ app.post('/createUser', function(req, res, next) {
             if (err) {
                 return next(err);
             } else {
-                console.log("result : ", result);
                 if (result != '') {
                     if (result[0].email == req.body.email) {
                         return res.json({
@@ -67,11 +61,9 @@ app.post('/createUser', function(req, res, next) {
 	                        if (err) {
 	                            return next(err);
 	                        } else {
-	                        	console.log("result : ", result);
 		                        var maillist = [
 	                                req.body.email,
 	                            ];
-	                            console.log("maillist : ", maillist)
 	                            var subject = "Hi " + req.body.user_name + ", welcome to Our System!";
 	                            var body = '<html><head><title>Welcome</title></head><body><h1><b>Dear ' + req.body.user_name + ',</b></h1><p>Thank you for joining Our System. Your account is now active.</p>' + '<p>Enjoy the rest of your day!</p>' + '<p>Kind Regards,</p>' + '<p>XYZ system;</p> ' + ' <p><a href="http://localhost:2000/addMoreUserInformation?id=' + result[0].id +'" +>Redirect To Login</a></p></body></html>';
 	                            var mailOptions = {
@@ -223,17 +215,17 @@ schedule.scheduleJob('*/15 * * * *', async function(){
 	                    subject = "Hi " + item.user_name + ", welcome to Our System!";
 	                    body = '<html><head><title>Welcome</title></head><body><h1><b>Dear ' + item.user_name + ',</b></h1><p>Thank you for joining Our System. Your account is now active.</p>' + '<p>Enjoy the rest of your day!</p>' + '<p>Kind Regards,</p>' + '<p>XYZ system;</p> ' + ' <p><a href="http://localhost:2000/addMoreUserInformation?id=' + item.id +'" +>Redirect To Login</a></p></body></html>';
 	                    mailOptions = {
-	                        from: config.authentication.user,
+	                        from: "ambuj.ideata@gmail.com",
 	                        to: item.email,
 	                        subject: subject,
 	                        html: body
 	                    };
 	                    transporter.sendMail(mailOptions, function(error, info) {
-		                        if (err) {
-		                            return next(err);
-		                        } else {
-		                            console.log('Email sent: ' + info.response);
-		                        }
+                            if (err) {
+	                            return next(err);
+	                        } else {
+	                            console.log('Email sent: ' + info);
+	                        }
                     	});
                     });                                             
                 
