@@ -27,12 +27,12 @@ CREATE TABLE `users` (
 
 
 API 
-1 Get All Users List
+1 create user
 url :- http://localhost:2000/getUsersList
 method :- get
 data obj :- NA
 
-2 Create New User
+2 
 url :- http://localhost:2000/createUser
 method :- post
 data obj :- {
@@ -41,13 +41,13 @@ data obj :- {
 }
 
 
-3 Get User Details By Id
+3 
 url :- http://localhost:2000/getUserDetailsById/1
 method :- get
 data obj :- NA
 
 
-4 Update User Details By Id
+4 
 url :- http://localhost:2000/updateUserDetailsById
 method :- post
 data obj :- {

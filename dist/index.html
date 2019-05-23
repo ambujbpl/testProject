@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app='IndexMyApp'>
+<head>
+	<title>Index Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./plugin/css/bootstrap.min.css">
+    <script src="./plugin/js/jquery.js"></script>
+    <script src="./plugin/js/bootstrap.min.js"></script>
+</head>
+<body ng-controller='IndexController'>
+	<div class="jumbotron text-center">
+		<table>
+		  <tr ng-repeat="x in users">
+		    <td style="background-color:#f1f1f1">{{ x.id }}</td>
+		    <td>{{ x.user_name }}</td>
+		    <td style="background-color:#f1f1f1">{{ x.first_name }}</td>
+		    <td>{{ x.last_name }}</td>
+		    <td style="background-color:#f1f1f1">{{ x.email }}</td>
+		    <td>{{ x.mobile_number }}</td>
+		    <td style="background-color:#f1f1f1">{{ x.status }}</td>
+		  </tr>
+		</table>	
+	</div>
+
+    <script type="text/javascript" src='./plugin/angular.js'></script>
+    <script type="text/javascript" src='./angular/app/indexApp.js'></script>
+    <script type="text/javascript" src='./angular/controller/indexController.js'></script>
+    <script type="text/javascript" src='./angular/service/indexService.js'></script>
+</body>
+</html>

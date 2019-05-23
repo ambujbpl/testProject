@@ -135,6 +135,14 @@ app.get('/addMoreUserInformation', function(req, res, next) {
     });
 });
 
+// // addMoreUserInformation.html redirect
+app.get('/', function(req, res, next) {
+    console.log('/  ---  /');
+    res.sendFile('index.html', {
+        root: path.resolve(__dirname, '../dist/')
+    });
+});
+
 
 app.get('/getUserDetailsById/:id', function(req, res, next) {
     console.log("id");
@@ -240,3 +248,7 @@ schedule.scheduleJob('*/15 * * * *', async function(){
         }
     });
 });
+
+// for all api related to route db mysql
+var users = require('./route/user');
+app.use('/route', users);
