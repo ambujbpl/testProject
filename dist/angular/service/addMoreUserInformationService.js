@@ -1,5 +1,5 @@
 angular
-	.module("MyApp")
+	.module("AddMoreMyApp")
 	.service("ContactService" , ['$http',function($http){
 		return {
       	GetUserInfo: function(data, callback) {

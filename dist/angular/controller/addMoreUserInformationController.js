@@ -1,5 +1,5 @@
 angular
-	.module('MyApp')
+	.module('AddMoreMyApp')
 	.controller('ChartController',['$scope','ContactService',function($scope,ContactService) {
 		var id = _getUrlParamater('id');
 		
